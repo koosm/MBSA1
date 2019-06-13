@@ -1,0 +1,41 @@
+﻿<div ng-controller="mbsacontroller">
+    <!-- Page Heading -->
+    <h1 class="my-4">
+        Sample Page Heading
+        <small>Secondary Text</small>
+    </h1>
+    <div class="row">
+        <div ng-repeat="project in Projects" class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="{{project.image}}" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">{{project.projectName}}</a>
+                    </h4>
+                    <p class="card-text">{{project.description}}</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- /.row -->
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a ng-click="Previous()" class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li ng-repeat="pageNumber in Pages" class="page-item">
+            <a class="page-link" ng-click="SetPageNumber(pageNumber)" href="#">{{pageNumber}}</a>
+        </li>
+       
+        <li class="page-item">
+            <a class="page-link" href="#" ng-click="Next()" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </a>
+        </li>
+    </ul>
+</div>
